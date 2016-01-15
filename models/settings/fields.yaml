@@ -1,0 +1,8 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    cms_editor:
+        label: CMS Editor
+        type: dropdown

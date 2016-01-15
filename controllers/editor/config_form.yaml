@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Editor
+
+# Model Form Field configuration
+form: $/adrenth/tinymce/models/editor/fields.yaml
+
+# Model Class name
+modelClass: Adrenth\TinyMce\Models\Editor
+
+# Default redirect location
+defaultRedirect: adrenth/tinymce/editor
+
+# Create page
+create:
+    title: Create Editor
+    redirect: adrenth/tinymce/editor/update/:id
+    redirectClose: adrenth/tinymce/editor
+
+# Update page
+update:
+    title: Edit Editor
+    redirect: adrenth/tinymce/editor
+    redirectClose: adrenth/tinymce/editor
+
+# Preview page
+preview:
+    title: Preview Editor

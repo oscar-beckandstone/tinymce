@@ -1,0 +1,27 @@
+{
+    "name": "adrenth/tinymce",
+    "type": "october-plugin",
+    "description": "Plugin for integrating TinyMCE into OctoberCMS",
+    "keywords": ["october", "cms", "tinymce", "plugin", "wysiwyg"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "A. Drenth",
+            "email": "adrenth@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Adrenth\\TinyMce\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
