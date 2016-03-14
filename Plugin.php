@@ -86,27 +86,15 @@ class Plugin extends PluginBase
             $class = get_class($form->model);
 
             switch ($class) {
-                // October CMS Page
-                case 'Cms\Classes\Page':
-                case 'Cms\Classes\Content':
-                // Support for plugin RainLab.Pages
                 case 'RainLab\Pages\Classes\Page':
-                    foreach(['markup', 'markup_html'] as $type) {
-                        if (array_key_exists($type, $form->fields)) {
-                            $field = $form->getField($type);
-                            $field->config['type'] = $field->config['widget'] = 'Adrenth\TinyMce\FormWidgets\TinyMce';
-                        }
-                    }
+                    $field = $form->getField('markup');
+                    $field->config['type'] = $field->config['widget'] = 'Adrenth\TinyMce\FormWidgets\TinyMce';
                     break;
-                // Support for plugin RainLab.Blog
                 case 'RainLab\Blog\Models\Post':
-                    if (array_key_exists('content', $form->fields)) {
-                        $field = $form->getField('content');
-                        $field->config['type'] = $field->config['widget'] = 'Adrenth\TinyMce\FormWidgets\TinyMce';
-                    }
+                    $field = $form->getField('content');
+                    $field->config['type'] = $field->config['widget'] = 'Adrenth\TinyMce\FormWidgets\TinyMce';
                     break;
             }
-            //var_dump(get_class($form->model));
         });
 
         Event::listen('backend.page.beforeDisplay', function (Controller $controller) {
